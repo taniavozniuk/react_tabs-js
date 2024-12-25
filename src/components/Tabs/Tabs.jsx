@@ -1,22 +1,19 @@
 import { useState } from 'react';
 
-export const Tabs = () => {
-  const [selectedTab, setSelectedTab] = useState(1);
-
-  const handleClick = tabValue => {
-    setSelectedTab(tabValue);
-  };
-
+export const Tabs = (tabs, selectedTab, setSelectedTab) => {
   return (
     <div data-cy="TabsComponent">
       <div className="tabs is-boxed">
         <ul>
-          <li className={selectedTab === 1 ? 'is-active' : ''} data-cy="Tab">
+          <li
+            className={selectedTab === tabs.id ? 'is-active' : ''}
+            data-cy="Tab"
+          >
             <a
               href="#tab-1"
               data-cy="TabLink"
               onClick={() => {
-                handleClick(1);
+                setSelectedTab(tabs.id);
               }}
             >
               Tab 1
@@ -28,7 +25,7 @@ export const Tabs = () => {
               href="#tab-2"
               data-cy="TabLink"
               onClick={() => {
-                handleClick(2);
+                setSelectedTab(tabs.id);
               }}
             >
               Tab 2
@@ -40,7 +37,7 @@ export const Tabs = () => {
               href="#tab-3"
               data-cy="TabLink"
               onClick={() => {
-                handleClick(3);
+                setSelectedTab(tabs.id);
               }}
             >
               Tab 3
@@ -53,6 +50,7 @@ export const Tabs = () => {
         {selectedTab === 1 && 'Some text 1'}
         {selectedTab === 2 && 'Some text 2'}
         {selectedTab === 3 && 'Some text 3'}
+        {/* {tabs.find(tab => tab.id === selectedTab)?.content} */}
         {/* Some text 1 */}
       </div>
     </div>
