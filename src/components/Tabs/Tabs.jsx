@@ -50,9 +50,9 @@ export const Tabs = () => {
       </div>
 
       <div className="block" data-cy="TabContent">
-        {selectedTab === 1 && ' Some text 1'}
-        {selectedTab === 2 && ' Some text 2'}
-        {selectedTab === 3 && ' Some text 3'}
+        {selectedTab === 1 && 'Some text 1'}
+        {selectedTab === 2 && 'Some text 2'}
+        {selectedTab === 3 && 'Some text 3'}
         {/* Some text 1 */}
       </div>
     </div>
