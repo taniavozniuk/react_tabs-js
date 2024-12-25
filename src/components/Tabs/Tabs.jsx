@@ -1,4 +1,8 @@
-export const Tabs = ({ selectedTab, setSelectedTab }) => {
+import { useState } from 'react';
+
+export const Tabs = () => {
+  const [selectedTab, setSelectedTab] = useState(1);
+
   const handleClick = tabValue => {
     setSelectedTab(tabValue);
   };
@@ -48,7 +52,8 @@ export const Tabs = ({ selectedTab, setSelectedTab }) => {
       <div className="block" data-cy="TabContent">
         {selectedTab === 1 && ' Some text 1'}
         {selectedTab === 2 && ' Some text 2'}
-        {selectedTab === 2 && ' Some text 2'}
+        {selectedTab === 3 && ' Some text 3'}
+        {/* Some text 1 */}
       </div>
     </div>
   );
