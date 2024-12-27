@@ -16,7 +16,11 @@ export const App = () => {
   return (
     <div className="section">
       <h1 className="title">{`Selected tab is Tab ${selectedTab}`}</h1>
-      <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <Tabs
+        tabs={tabs}
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+      />
     </div>
   );
 };
