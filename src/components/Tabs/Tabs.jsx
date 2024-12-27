@@ -1,4 +1,4 @@
-export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
+export const Tabs = ({ tabs, activeTabId, setActiveTabId }) => {
   return (
     <div data-cy="TabsComponent">
       <div className="tabs is-boxed">
@@ -13,7 +13,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
                 href={`#${tab.id}`}
                 data-cy="TabLink"
                 onClick={() => {
-                  onTabSelected(index + 1);
+                  setActiveTabId(index + 1);
                 }}
               >
                 {tab.title}
